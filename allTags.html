@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demostración de Etiquetas HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <!-- Elementos estructurales -->
+    <header>
+        <h1>Demostración de Etiquetas HTML</h1>
+        <nav>
+            <ul>
+                <li><a href="#bloque">Elementos de Bloque</a></li>
+                <li><a href="#linea">Elementos en Línea</a></li>
+                <li><a href="#formulario">Formulario</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="bloque">
+            <h2>Elementos de Bloque</h2>
+            <article>
+                <h3>Artículo de ejemplo</h3>
+                <p>Este es un párrafo dentro de un artículo. Los párrafos son elementos de bloque.</p>
+                <blockquote>
+                    Esta es una cita en bloque que demuestra el uso de la etiqueta blockquote.
+                </blockquote>
+            </article>
+
+            <div class="container">
+                <h4>Listas</h4>
+                <h5>Lista ordenada:</h5>
+                <ol>
+                    <li>Primer elemento</li>
+                    <li>Segundo elemento</li>
+                    <li>Tercer elemento</li>
+                </ol>
+
+                <h6>Lista no ordenada:</h6>
+                <ul>
+                    <li>Elemento con viñeta</li>
+                    <li>Otro elemento</li>
+                    <li>Un elemento más</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="linea">
+            <h2>Elementos en Línea</h2>
+            <p>
+                Aquí hay un <span class="highlight">span destacado</span>.
+                Podemos usar <strong>texto en negrita</strong> y 
+                <em>texto en cursiva</em>.
+                También tenemos <mark>texto marcado</mark> y 
+                <small>texto pequeño</small>.
+            </p>
+            
+            <p>
+                Fórmula química del agua: H<sub>2</sub>O<br>
+                Metros cuadrados se escribe: m<sup>2</sup>
+            </p>
+
+            <p>
+                <img src="/api/placeholder/200/100" alt="Imagen de ejemplo">
+                <a href="#">Este es un enlace</a>
+            </p>
+        </section>
+
+        <section id="formulario">
+            <h2>Formulario de ejemplo</h2>
+            <form>
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre">
+                </div>
+                <div>
+                    <label for="comentario">Comentario:</label>
+                    <textarea id="comentario" name="comentario"></textarea>
+                </div>
+                <div>
+                    <label for="opciones">Selecciona una opción:</label>
+                    <select id="opciones" name="opciones">
+                        <option value="1">Opción 1</option>
+                        <option value="2">Opción 2</option>
+                        <option value="3">Opción 3</option>
+                    </select>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <aside>
+        <h3>Contenido relacionado</h3>
+        <p>Este es un contenido complementario en el aside.</p>
+    </aside>
+
+    <footer>
+        <p>Pie de página - &copy; 2025</p>
+    </footer>
+</body>
+</html>
