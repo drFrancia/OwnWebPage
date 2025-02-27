@@ -104,6 +104,21 @@
             list-style: none; /* Elimina los puntos de la lista */
             padding-left: 0; /* Elimina el sangrado predeterminado */
         }
+
+        .boton-estilo {
+            background-color: #1f6e4d; /* Color de fondo verde */
+            color: white; /* Color del texto */
+            border: none; /* Sin borde */
+            border-radius: 20px; /* Borde redondeado */
+            padding: 10px 20px; /* Espaciado interno */
+            font-size: 16px; /* Tamaño de la fuente */
+            cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+            font-family: Arial, sans-serif; /* Familia de la fuente */
+        }
+
+        .boton-estilo:hover {
+            background-color: #1a5238; /* Color de fondo más oscuro al pasar el ratón */
+        }
     </style>
 </head>
 <body>
@@ -150,26 +165,9 @@
                     <h5>Todas las categorías</h5>
                 </div>
                 <ul class="category-list">
-                    <li>
-                        <a href="#" class="hover-trigger" data-target="celulares">
-                            <i class="fas fa-mobile"></i>
-                            <span>Celulares</span>
-                        </a>
-                        <div class="collapse-box" id="celulares">
-                            <div class="d-flex flex-row flex-wrap">
-                                <div class="category-box">
-                                    <ul class="no-bullets">
-                                        <h6>Celulares</h6>
-                                        <li>Chayomi</li>
-                                        <li>iPhone</li>
-                                        <li>Oppo</li>
-                                        <li>Redmi</li>
-                                        <li>Motorola G5 Pro</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
+                    <!-- item 1 de categorias -->
+
+                    <!-- item 2 de categorias -->
                     <li>
                         <a href="#" class="hover-trigger" data-target="audio">
                             <i class="fas fa-headphones"></i>
@@ -186,9 +184,18 @@
                                         <li>Microfonos</li>
                                     </ul>
                                 </div>
+                                <div class="category-box">
+                                    <div class="d-flex flex-row">
+                                        <div class="card d-flex flex-column p-2">
+                                            <img src="https://cartzilla-html.createx.studio/assets/img/shop/electronics/categories/07.png" alt="">
+                                            <ahref="#" class="boton-estilo justify-content-centers">Comprar Ya!</ahref=>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </li>
+                    <!-- item 3 de categorias -->
                     <li>
                         <a href="#" class="hover-trigger" data-target="belleza">
                             <i class="fas fa-heart"></i>
