@@ -59,8 +59,8 @@
         .collapse-box {
             display: none;
             position: absolute;
-            top: -45px; /* Aparece debajo de Categoría 1 */
-            left: 200px;
+            top: 0px; /* Aparece debajo de Categoría 1 */
+            left: 300px;
             background: white;
             border: 1px solid #ccc;
             padding: 15px;
@@ -98,6 +98,11 @@
         .custom-col-1-5 {
             flex: 0 0 12.5%; /* Ancho fijo de 1.5 columnas */
             max-width: 12.5%;
+        }
+
+        .no-bullets {
+            list-style: none; /* Elimina los puntos de la lista */
+            padding-left: 0; /* Elimina el sangrado predeterminado */
         }
     </style>
 </head>
@@ -146,102 +151,312 @@
                 </div>
                 <ul class="category-list">
                     <li>
-                        <a href="#" class="category-trigger">
+                        <a href="#" class="hover-trigger" data-target="celulares">
                             <i class="fas fa-mobile"></i>
                             <span>Celulares</span>
                         </a>
+                        <div class="collapse-box" id="celulares">
+                            <div class="d-flex flex-row flex-wrap">
+                                <div class="category-box">
+                                    <ul class="no-bullets">
+                                        <h6>Celulares</h6>
+                                        <li>Chayomi</li>
+                                        <li>iPhone</li>
+                                        <li>Oppo</li>
+                                        <li>Redmi</li>
+                                        <li>Motorola G5 Pro</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li>
-                        <a href="#" class="category-trigger">
+                        <a href="#" class="hover-trigger" data-target="audio">
                             <i class="fas fa-headphones"></i>
                             <span>Audio</span>
                         </a>
+                        <div class="collapse-box" id="audio">
+                            <div class="d-flex flex-row flex-wrap">
+                                <div class="category-box">
+                                    <ul class="no-bullets">
+                                        <h6>Audio</h6>
+                                        <li>Auriculares con cable</li>
+                                        <li>Auriculares Inalambricos</li>
+                                        <li>Equipos de Sonido</li>
+                                        <li>Microfonos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li>
-                        <a href="#" class="category-trigger">
+                        <a href="#" class="hover-trigger" data-target="belleza">
                             <i class="fas fa-heart"></i>
                             <span>Belleza y Cuidado Personal</span>
                         </a>
+                        <div class="collapse-box" id="belleza">
+                            <div class="d-flex flex-row flex-wrap">
+                                <div class="category-box">
+                                    <ul class="no-bullets">
+                                        <h6>Belleza y Cuidado Personal</h6>
+                                        <li>Maquillaje</li>
+                                        <li>Cuidado de la piel</li>
+                                        <li>Perfumes</li>
+                                        <li>Productos para el cabello</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" class="hover-trigger" data-target="climatizacion">
                             <i class="fas fa-wind"></i>
                             <span>Climatización</span>
                         </a>
+                        <div class="collapse-box" id="climatizacion">
+                            <div class="d-flex flex-row flex-wrap">
+                                <div class="category-box">
+                                    <ul class="no-bullets">
+                                        <h6>Climatización</h6>
+                                        <li>Aire Acondicionado</li>
+                                        <li>Calefacción</li>
+                                        <li>Ventiladores</li>
+                                        <li>Humidificadores</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" class="hover-trigger" data-target="deportes">
                             <i class="fas fa-dumbbell"></i>
                             <span>Deportes y Fitness</span>
                         </a>
+                        <div class="collapse-box" id="deportes">
+                            <div class="d-flex flex-row flex-wrap">
+                                <div class="category-box">
+                                    <ul class="no-bullets">
+                                        <h6>Deportes y Fitness</h6>
+                                        <li>Equipos de Gimnasio</li>
+                                        <li>Ropa Deportiva</li>
+                                        <li>Accesorios de Yoga</li>
+                                        <li>Bicicletas</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" class="hover-trigger" data-target="gaming">
                             <i class="fas fa-gamepad"></i>
                             <span>Gaming</span>
                         </a>
+                        <div class="collapse-box" id="gaming">
+                            <div class="d-flex flex-row flex-wrap">
+                                <div class="category-box">
+                                    <ul class="no-bullets">
+                                        <h6>Gaming</h6>
+                                        <li>Consolas</li>
+                                        <li>Videojuegos</li>
+                                        <li>Accesorios de Juego</li>
+                                        <li>Sillas Gamer</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" class="hover-trigger" data-target="herramientas">
                             <i class="fas fa-tools"></i>
                             <span>Herramientas</span>
                         </a>
+                        <div class="collapse-box" id="herramientas">
+                            <div class="d-flex flex-row flex-wrap">
+                                <div class="category-box">
+                                    <ul class="no-bullets">
+                                        <h6>Herramientas</h6>
+                                        <li>Herramientas Manuales</li>
+                                        <li>Herramientas Eléctricas</li>
+                                        <li>Equipos de Jardinería</li>
+                                        <li>Accesorios</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" class="hover-trigger" data-target="hogar">
                             <i class="fas fa-home"></i>
                             <span>Hogar y Cocina</span>
                         </a>
+                        <div class="collapse-box" id="hogar">
+                            <div class="d-flex flex-row flex-wrap">
+                                <div class="category-box">
+                                    <ul class="no-bullets">
+                                        <h6>Hogar y Cocina</h6>
+                                        <li>Utensilios de Cocina</li>
+                                        <li>Muebles</li>
+                                        <li>Decoración</li>
+                                        <li>Electrodomésticos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" class="hover-trigger" data-target="impresoras">
                             <i class="fas fa-print"></i>
                             <span>Impresoras</span>
                         </a>
+                        <div class="collapse-box" id="impresoras">
+                            <div class="d-flex flex-row flex-wrap">
+                                <div class="category-box">
+                                    <ul class="no-bullets">
+                                        <h6>Impresoras</h6>
+                                        <li>Impresoras Láser</li>
+                                        <li>Impresoras de Inyección de Tinta</li>
+                                        <li>Impresoras 3D</li>
+                                        <li>Accesorios de Impresión</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" class="hover-trigger" data-target="jardin">
                             <i class="fas fa-seedling"></i>
                             <span>Jardín</span>
                         </a>
+                        <div class="collapse-box" id="jardin">
+                            <div class="d-flex flex-row flex-wrap">
+                                <div class="category-box">
+                                    <ul class="no-bullets">
+                                        <h6>Jardín</h6>
+                                        <li>Plantas</li>
+                                        <li>Muebles de Jardín</li>
+                                        <li>Herramientas de Jardinería</li>
+                                        <li>Decoración Exterior</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" class="hover-trigger" data-target="lecho">
                             <i class="fas fa-bed"></i>
                             <span>Lecho y Secado</span>
                         </a>
+                        <div class="collapse-box" id="lecho">
+                            <div class="d-flex flex-row flex-wrap">
+                                <div class="category-box">
+                                    <ul class="no-bullets">
+                                        <h6>Lecho y Secado</h6>
+                                        <li>Lavadoras</li>
+                                        <li>Secadoras</li>
+                                        <li>Combinaciones Lavadora-Secadora</li>
+                                        <li>Accesorios</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" class="hover-trigger" data-target="muebles">
                             <i class="fas fa-couch"></i>
                             <span>Muebles</span>
                         </a>
+                        <div class="collapse-box" id="muebles">
+                            <div class="d-flex flex-row flex-wrap">
+                                <div class="category-box">
+                                    <ul class="no-bullets">
+                                        <h6>Muebles</h6>
+                                        <li>Sofás</li>
+                                        <li>Mesas</li>
+                                        <li>Sillas</li>
+                                        <li>Armarios</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" class="hover-trigger" data-target="electrodomesticos">
                             <i class="fas fa-plug"></i>
                             <span>Pequeños Electrodomésticos</span>
                         </a>
+                        <div class="collapse-box" id="electrodomesticos">
+                            <div class="d-flex flex-row flex-wrap">
+                                <div class="category-box">
+                                    <ul class="no-bullets">
+                                        <h6>Pequeños Electrodomésticos</h6>
+                                        <li>Batidoras</li>
+                                        <li>Cafeteras</li>
+                                        <li>Licuadoras</li>
+                                        <li>Tostadoras</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" class="hover-trigger" data-target="refrigeracion">
                             <i class="fas fa-snowflake"></i>
                             <span>Refrigeración</span>
                         </a>
+                        <div class="collapse-box" id="refrigeracion">
+                            <div class="d-flex flex-row flex-wrap">
+                                <div class="category-box">
+                                    <ul class="no-bullets">
+                                        <h6>Refrigeración</h6>
+                                        <li>Refrigeradores</li>
+                                        <li>Congeladores</li>
+                                        <li>Minibares</li>
+                                        <li>Accesorios</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" class="hover-trigger" data-target="tv">
                             <i class="fas fa-tv"></i>
                             <span>TV</span>
                         </a>
+                        <div class="collapse-box" id="tv">
+                            <div class="d-flex flex-row flex-wrap">
+                                <div class="category-box">
+                                    <ul class="no-bullets">
+                                        <h6>TV</h6>
+                                        <li>Televisores LED</li>
+                                        <li>Smart TVs</li>
+                                        <li>Proyectores</li>
+                                        <li>Accesorios</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" class="hover-trigger" data-target="vehiculos">
                             <i class="fas fa-car"></i>
                             <span>Vehículos</span>
                         </a>
+                        <div class="collapse-box" id="vehiculos">
+                            <div class="d-flex flex-row flex-wrap">
+                                <div class="category-box">
+                                    <ul class="no-bullets">
+                                        <h6>Vehículos</h6>
+                                        <li>Autos</li>
+                                        <li>Motos</li>
+                                        <li>Bicicletas</li>
+                                        <li>Accesorios</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                 </ul>
+                
             </div>
             <!-- Div de la derecha con 10 columnas -->
             <div class="container contenido2 col-10 ">
@@ -255,42 +470,57 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const trigger = document.getElementById("hoverTrigger");
-            const content = document.getElementById("hoverContent");
-
-            let isPinned = false;
-
-            // Mostrar el menú al hacer hover
-            trigger.addEventListener("mouseenter", () => {
-                if (!isPinned) content.classList.add("active");
-            });
-
-            content.addEventListener("mouseenter", () => {
-                if (!isPinned) content.classList.add("active");
-            });
-
-            // Ocultar el menú al salir del área, solo si no está fijado
-            trigger.addEventListener("mouseleave", () => {
-                if (!isPinned) content.classList.remove("active");
-            });
-
-            content.addEventListener("mouseleave", () => {
-                if (!isPinned) content.classList.remove("active");
-            });
-
-            // Fijar o soltar el menú al hacer clic en "Categoría 1"
-            trigger.addEventListener("click", (event) => {
-                event.preventDefault();
-                isPinned = !isPinned;
-                content.classList.toggle("active", isPinned);
-            });
-
-            // Cerrar el menú si se hace clic fuera de él
-            document.addEventListener("click", (event) => {
-                if (!content.contains(event.target) && !trigger.contains(event.target)) {
-                    content.classList.remove("active");
-                    isPinned = false;
-                }
+            let pinnedMenu = null;
+    
+            document.querySelectorAll(".hover-trigger").forEach(trigger => {
+                const targetId = trigger.getAttribute("data-target");
+                const content = document.getElementById(targetId);
+    
+                let isPinned = false;
+    
+                // Mostrar el menú al hacer hover
+                trigger.addEventListener("mouseenter", () => {
+                    if (!isPinned) content.classList.add("active");
+                });
+    
+                content.addEventListener("mouseenter", () => {
+                    if (!isPinned) content.classList.add("active");
+                });
+    
+                // Ocultar el menú al salir del área si no está fijado
+                trigger.addEventListener("mouseleave", () => {
+                    if (!isPinned) content.classList.remove("active");
+                });
+    
+                content.addEventListener("mouseleave", () => {
+                    if (!isPinned) content.classList.remove("active");
+                });
+    
+                // Fijar o soltar el menú al hacer clic
+                trigger.addEventListener("click", (event) => {
+                    event.preventDefault();
+    
+                    // Si hay un menú ya fijado, lo cerramos
+                    if (pinnedMenu && pinnedMenu !== content) {
+                        pinnedMenu.classList.remove("active");
+                        pinnedMenu.isPinned = false;
+                    }
+    
+                    isPinned = !isPinned;
+                    content.classList.toggle("active", isPinned);
+    
+                    // Guardamos el menú fijado
+                    pinnedMenu = isPinned ? content : null;
+                });
+    
+                // Cerrar el menú si se hace clic fuera de él
+                document.addEventListener("click", (event) => {
+                    if (!content.contains(event.target) && !trigger.contains(event.target)) {
+                        content.classList.remove("active");
+                        isPinned = false;
+                        if (pinnedMenu === content) pinnedMenu = null;
+                    }
+                });
             });
         });
     </script>
