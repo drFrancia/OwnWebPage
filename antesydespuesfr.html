@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Productos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .product-body {
+            text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left; /* Cambia a la izquierda si es necesario */
+            width: 250px;
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .product-card .title {
+            font-size: 1em;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .product-card .price-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Alinea los precios a la izquierda */
+            margin-top: 5px;
+        }
+
+        .product-card .old-price {
+            font-size: 0.9em;
+            color: red;
+            text-decoration: line-through;
+            margin-right: 10px;
+        }
+
+        .product-card .new-price {
+            font-size: 1.2em;
+            color: #2D288B;
+        }
+
+        .product-card .btn {
+            background-color: #2D288B;
+            border: none;
+            color: white;
+            padding: 10px;
+            font-size: 0.9em;
+            border-radius: 5px;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .product-card .btn:hover {
+            background-color: #2D288B;
+        }
+
+        .promo-banner {
+            background-color: #2D288B;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .product-title {
+            color: #082e85;
+            text-align: left;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            /* -webkit-line-clamp: 2; */
+            overflow: hidden;
+        }
+
+        .letraAzul {
+            color: #2D288B;
+            text-decoration: none;
+        }
+
+        .chico {
+            font-size: 80%;
+            align-self: flex-start;
+        }
+
+        /* Estilos para el select  con divs: */
+        .custom-select {
+            position: relative;
+            display: inline-block;
+            width: 210px;
+            height: 68px;
+            cursor: pointer;
+        }
+
+        .selected-option {
+            padding: 0px; /* Ajusta el padding para reducir la altura */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+            height: 50px;
+            width: 170px;
+
+
+        }
+
+        .options-list {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            z-index: 1000;
+            border-radius: 4px;
+        }
+
+        .option {
+            padding: 0px; /* Ajusta el padding para reducir la altura */
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+            padding-right: 5px;
+        }
+
+        .option:last-child {
+            border-bottom: none;
+        }
+
+        .option:hover {
+            background-color: #f0f0f0;
+        }
+
+        .old-price {
+            text-decoration:overline;
+            color: red;
+            font-size: 0.9em;
+        }
+
+        .new-price {
+            color: #2D288B;
+            font-size: 1em;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="promo-banner">
+            ¡VER PROMOCIONES!
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="product-card">
+                    <img src="https://www.gonzalezgimenez.com.py/storage/sku/goodweather-acondicionadores-split-pared-acondicionador-de-aire-goodweather-18000fc-eco-gw18-inverter-1-1-1730405453.png.webp" alt="Producto 1">
+                    <div class="product-body">
+                        <a class="letraAzul chico">
+                            Acondicionadores Split Pared
+                        </a>
+                        <h6 class="product-title">
+                            <a href="" class="letraAzul">
+                                Acondicionador de Aire Altech 12000 BTU F/C ECO ALT12H410 Split
+                            </a>
+                        </h6>
+                        <div class="title">
+                            <label for="" class="chico">En chiquicuotas de: </label>
+                            <div class="custom-select">
+                                <div class="selected-option">
+                                    <span class="old-price chico">12 x Gs. 1.200.000</span>
+                                    <p class="new-price">12 x Gs. 1.000.000</p>
+                                </div>
+                                <div class="options-list">
+                                    <div class="option" data-value="5">
+                                        <span class="old-price">5 x Gs. 2.400.000</span>
+                                        <p class="new-price">5 x Gs. 2.200.000</p>
+                                    </div>
+                                    <div class="option" data-value="4">
+                                        <span class="old-price">4 x Gs. 3.000.000</span>
+                                        <p class="new-price">4 x Gs. 2.800.000</p>
+                                    </div>
+                                    <div class="option" data-value="3">
+                                        <span class="old-price">3 x Gs. 4.000.000</span>
+                                        <p class="new-price">3 x Gs. 3.800.000</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cont">
+                            <span>
+                                <label for=""></label>
+                                <span></span>
+                            </span>
+                            <span>
+                                <label for=""></label>
+                                <span></span>                            </span>
+                        </div>
+                        <div class="price-container">
+                            <span class="old-price">Gs. 2.500.000</span>
+                            <span class="new-price">Gs. 2.214.000</span>
+                        </div>
+                        <button class="btn">Comprar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="product-card">
+                    <img src="https://www.gonzalezgimenez.com.py/storage/sku/altech-acondicionadores-de-aire-acondicionador-de-aire-altech-12000-fc-eco-alt12h410-split-1-1-1701792069.png.webp" alt="Producto 2">
+                    <div class="title">Piscina Intex Color Rosa</div>
+                    <div class="price-container">
+                        <span class="old-price">Gs. 700.000</span>
+                        <span class="new-price">Gs. 609.000</span>
+                    </div>
+                    <button class="btn">Comprar</button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="product-card">
+                    <img src="https://www.gonzalezgimenez.com.py/storage/sku/altech-acondicionadores-de-aire-acondicionador-de-aire-altech-24000-fc-eco-alt24h410-split-1-1-1701797290.png.webp" alt="Producto 3">
+                    <div class="title">Equipo de Terapia Kryomax</div>
+                    <div class="price-container">
+                        <span class="old-price">Gs. 750.000</span>
+                        <span class="new-price">Gs. 686.000</span>
+                    </div>
+                    <button class="btn">Comprar</button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="product-card">
+                    <img src="https://www.gonzalezgimenez.com.py/storage/sku/goodweather-acondicionadores-de-aire-acondicionador-de-aire-goodweather-12000-btu-eco-gw-12fo-2-1-1720615916.jpg.webp" alt="Producto 4">
+                    <div class="title">Cartera Mujer Tommy Hilfiger</div>
+                    <div class="price-container">
+                        <span class="old-price">Gs. 900.000</span>
+                        <span class="new-price">Gs. 808.000</span>
+                    </div>
+                    <button class="btn">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.querySelector('.custom-select').addEventListener('click', function() {
+            const optionsList = this.querySelector('.options-list');
+            optionsList.style.display = optionsList.style.display === 'block' ? 'none' : 'block';
+        });
+
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('click', function() {
+                const selectedOption = document.querySelector('.selected-option');
+                selectedOption.innerHTML = this.innerHTML;
+                document.querySelector('.options-list').style.display = 'none';
+            });
+        });
+
+        
+    </script>
+</body>
+</html>
