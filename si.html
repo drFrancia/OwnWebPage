@@ -63,6 +63,7 @@
             left: 300px;
             background: white;
             border: 1px solid #ccc;
+            border-radius:3%;
             padding: 15px;
             min-width: 350px;
             max-width: 600px; /* Ajustable según necesidad */
@@ -70,13 +71,20 @@
             z-index: 1;
         }
 
-        .category-box {
-            flex: 1 1 30%; /* Distribuye bien el espacio para varias categorías */
-            min-width: 150px;
-            padding: 10px;
-            background: #f8f9fa;
-            border-radius: 8px;
+        .category-box { 
+            flex-wrap: wrap;
         }
+
+        .category-box img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            border-radius: 8px;
+            justify-content: center;
+        }
+
+
 
         .category-wrapper {
             display: flex;
@@ -103,21 +111,36 @@
         .no-bullets {
             list-style: none; /* Elimina los puntos de la lista */
             padding-left: 0; /* Elimina el sangrado predeterminado */
+            /* text-decoration: #2D288B; */
+            margin-bottom: 20px;
         }
 
         .boton-estilo {
-            background-color: #1f6e4d; /* Color de fondo verde */
+            background-color: #2D288B; /* Color de fondo azul */
             color: white; /* Color del texto */
             border: none; /* Sin borde */
             border-radius: 20px; /* Borde redondeado */
-            padding: 10px 20px; /* Espaciado interno */
+            padding: 5px 50px; /* Espaciado interno */
             font-size: 16px; /* Tamaño de la fuente */
             cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
             font-family: Arial, sans-serif; /* Familia de la fuente */
+            max-width: 100px !important; 
         }
 
         .boton-estilo:hover {
-            background-color: #1a5238; /* Color de fondo más oscuro al pasar el ratón */
+            background-color: #2D288B; /* Color de fondo más oscuro al pasar el ratón */
+        }
+
+        .color-texto {
+            color: #2D288B;
+        }
+
+        .color-texto2 {
+            color: white;
+        }
+
+        .centrado {
+            text-align: center;
         }
     </style>
 </head>
@@ -160,9 +183,9 @@
     <section class="container-fluid">
         <div class="d-flex flex-row">
             <!-- Div de la izquierda con menú de categorías -->
-            <div class="container col-2">
+            <div class="container col-2 ">
                 <div class="category-title">
-                    <h5>Todas las categorías</h5>
+                    <h5 class="color-texto">Todas las categorías</h5>
                 </div>
                 <ul class="category-list">
                     <!-- item 1 de categorias -->
@@ -170,25 +193,40 @@
                     <!-- item 2 de categorias -->
                     <li>
                         <a href="#" class="hover-trigger" data-target="audio">
-                            <i class="fas fa-headphones"></i>
-                            <span>Audio</span>
+                            <i class="fas fa-headphones color-texto"></i>
+                            <span class="color-texto">Audio</span>
                         </a>
                         <div class="collapse-box" id="audio">
                             <div class="d-flex flex-row flex-wrap">
-                                <div class="category-box">
-                                    <ul class="no-bullets">
-                                        <h6>Audio</h6>
-                                        <li>Auriculares con cable</li>
-                                        <li>Auriculares Inalambricos</li>
-                                        <li>Equipos de Sonido</li>
-                                        <li>Microfonos</li>
+                                <div class="category-box row row-cols-2 p-4 gap-4">
+                                    <ul class="no-bullets col">
+                                        <h4 class="color-texto">Audio</h4>
+                                        <li class="color-texto">Auriculares con cable</li>
+                                        <li class="color-texto">Auriculares Inalambricos</li>
+                                        <li class="color-texto">Equipos de Sonido</li>
+                                        <li class="color-texto">Microfonos</li>
+                                    </ul>
+                                    <ul class="no-bullets col">
+                                        <h4 class="color-texto">Audio</h4>
+                                        <li class="color-texto">Auriculares con cable</li>
+                                        <li class="color-texto">Auriculares Inalambricos</li>
+                                        <li class="color-texto">Equipos de Sonido</li>
+                                        <li class="color-texto">Microfonos</li>
+                                    </ul>
+                                    <ul class="no-bullets col">
+                                        <h4 class="color-texto">Audio</h4>
+                                        <li class="color-texto">Auriculares con cable</li>
+                                        <li class="color-texto">Auriculares Inalambricos</li>
+                                        <li class="color-texto">Equipos de Sonido</li>
+                                        <li class="color-texto">Microfonos</li>
                                     </ul>
                                 </div>
                                 <div class="category-box">
                                     <div class="d-flex flex-row">
-                                        <div class="card d-flex flex-column p-2">
+                                        <div class="card d-flex flex-column p-2 justify-content-center align-items-center">
+                                            <h5 class="color-texto" style="text-align: center;">Producto destacado</h5>
                                             <img src="https://cartzilla-html.createx.studio/assets/img/shop/electronics/categories/07.png" alt="">
-                                            <ahref="#" class="boton-estilo justify-content-centers">Comprar Ya!</ahref=>
+                                            <a href="#" class="boton-estilo centrado d-flex">Ir a comprar...</a>
                                         </div>
                                     </div>
                                 </div>
@@ -198,113 +236,195 @@
                     <!-- item 3 de categorias -->
                     <li>
                         <a href="#" class="hover-trigger" data-target="belleza">
-                            <i class="fas fa-heart"></i>
-                            <span>Belleza y Cuidado Personal</span>
+                            <i class="fas fa-heart color-texto"></i>
+                            <span class="color-texto">Belleza y Cuidado Personal</span>
                         </a>
                         <div class="collapse-box" id="belleza">
                             <div class="d-flex flex-row flex-wrap">
-                                <div class="category-box">
-                                    <ul class="no-bullets">
-                                        <h6>Belleza y Cuidado Personal</h6>
-                                        <li>Maquillaje</li>
-                                        <li>Cuidado de la piel</li>
-                                        <li>Perfumes</li>
-                                        <li>Productos para el cabello</li>
+                                <div class="category-box row row-cols-2 p-4 gap-4">
+                                    <ul class="no-bullets col">
+                                        <h5 class="color-texto">Belleza y Cuidado Personal</h5>
+                                        <li class="color-texto">Maquillaje</li>
+                                        <li class="color-texto">Cuidado de la piel</li>
+                                        <li class="color-texto">Perfumes</li>
+                                        <li class="color-texto">Productos para el cabello</li>
                                     </ul>
+                                    <ul class="no-bullets col">
+                                        <h5 class="color-texto">Belleza y Cuidado Personal</h5>
+                                        <li class="color-texto">Maquillaje</li>
+                                        <li class="color-texto">Cuidado de la piel</li>
+                                        <li class="color-texto">Perfumes</li>
+                                        <li class="color-texto">Productos para el cabello</li>
+                                    </ul>
+                                    <ul class="no-bullets col">
+                                        <h5 class="color-texto">Belleza y Cuidado Personal</h5>
+                                        <li class="color-texto">Maquillaje</li>
+                                        <li class="color-texto">Cuidado de la piel</li>
+                                        <li class="color-texto">Perfumes</li>
+                                        <li class="color-texto">Productos para el cabello</li>
+                                    </ul>
+                                </div>
+                                <div class="category-box">
+                                    <div class="d-flex flex-row">
+                                        <div class="card d-flex flex-column p-2 justify-content-center align-items-center">
+                                            <h5 class="color-texto" style="text-align: center;">Producto destacado</h5>
+                                            <img src="https://www.gonzalezgimenez.com.py/storage/sku/bellissima-belleza-femenina-ondulador-bellissima-bhs3-2-1-1682717386.png.webp" alt="">
+                                            <a href="#" class="boton-estilo centrado">Ir a comprar...</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        
+                        <!-- <div class="collapse-box" id="belleza">
+                            <div class="d-flex flex-row flex-wrap">
+                                <div class="category-box">
+                                    <ul class="no-bullets">
+                                        <h6 class="color-texto">Belleza y Cuidado Personal</h6>
+                                        <li class="color-texto">Maquillaje</li>
+                                        <li class="color-texto">Cuidado de la piel</li>
+                                        <li class="color-texto">Perfumes</li>
+                                        <li class="color-texto">Productos para el cabello</li>
+                                    </ul>
+                                </div>
+                                <div class="category-box">
+                                    <div class="d-flex flex-row">
+                                        <div class="card d-flex flex-column p-2">
+                                            <h5 class="color-texto" style="text-align: center;">Producto destacado</h5>
+                                            <img src="https://www.gonzalezgimenez.com.py/storage/sku/bellissima-belleza-femenina-ondulador-bellissima-bhs3-2-1-1682717386.png.webp" alt="">
+                                            <ahref="#" class="boton-estilo centrado">Ir a comprar...</ahref=>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
                     </li>
                     <li>
                         <a href="#" class="hover-trigger" data-target="climatizacion">
-                            <i class="fas fa-wind"></i>
-                            <span>Climatización</span>
+                            <i class="fas fa-wind  color-texto"></i>
+                            <span class="color-texto">Climatización</span>
                         </a>
                         <div class="collapse-box" id="climatizacion">
                             <div class="d-flex flex-row flex-wrap">
                                 <div class="category-box">
                                     <ul class="no-bullets">
-                                        <h6>Climatización</h6>
-                                        <li>Aire Acondicionado</li>
-                                        <li>Calefacción</li>
-                                        <li>Ventiladores</li>
-                                        <li>Humidificadores</li>
+                                        <h6 class="color-texto">Climatización</h6>
+                                        <li class="color-texto">Aire Acondicionado</li>
+                                        <li class="color-texto">Calefacción</li>
+                                        <li class="color-texto">Ventiladores</li>
+                                        <li class="color-texto">Humidificadores</li>
                                     </ul>
+                                </div>
+                                <div class="category-box">
+                                    <div class="d-flex flex-row">
+                                        <div class="card d-flex flex-column p-2">
+                                            <h5 class="color-texto">Producto destacado</h5>
+                                            <img src="https://www.gonzalezgimenez.com.py/storage/sku/goodweather-acondicionadores-de-aire-acondicionador-de-aire-goodweather-pisotecho-60000btu-2-1-1720618190.jpg.webp" alt="">
+                                            <a href="#" class="boton-estilo centrado color-texto2">Ir a comprar...</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </li>
                     <li>
                         <a href="#" class="hover-trigger" data-target="deportes">
-                            <i class="fas fa-dumbbell"></i>
-                            <span>Deportes y Fitness</span>
+                            <i class="fas fa-dumbbell color-texto"></i>
+                            <span class="color-texto">Deportes y Fitness</span>
                         </a>
                         <div class="collapse-box" id="deportes">
                             <div class="d-flex flex-row flex-wrap">
                                 <div class="category-box">
                                     <ul class="no-bullets">
-                                        <h6>Deportes y Fitness</h6>
-                                        <li>Equipos de Gimnasio</li>
-                                        <li>Ropa Deportiva</li>
-                                        <li>Accesorios de Yoga</li>
-                                        <li>Bicicletas</li>
+                                        <h6 class="color-texto">Deportes y Fitness</h6>
+                                        <li class="color-texto">Equipos de Gimnasio</li>
+                                        <li class="color-texto">Ropa Deportiva</li>
+                                        <li class="color-texto">Accesorios de Yoga</li>
+                                        <li class="color-texto">Bicicletas</li>
                                     </ul>
+                                </div>
+                                <div class="category-box">
+                                    <div class="d-flex flex-row">
+                                        <div class="card d-flex flex-column p-2">
+                                            <h5 class="color-texto" style="text-align: center;">Producto destacado</h5>
+                                            <img src="https://www.gonzalezgimenez.com.py/storage/sku/antur-bicicletas-bicicleta-giant-talon-2-aro-29-concret-1-1-1707419751.png.webp" alt="">
+                                            <a href="#" class="boton-estilo centrado">Ir a comprar...</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </li>
                     <li>
                         <a href="#" class="hover-trigger" data-target="gaming">
-                            <i class="fas fa-gamepad"></i>
-                            <span>Gaming</span>
+                            <i class="fas fa-gamepad color-texto"></i>
+                            <span class="color-texto">Gaming</span>
                         </a>
                         <div class="collapse-box" id="gaming">
                             <div class="d-flex flex-row flex-wrap">
                                 <div class="category-box">
                                     <ul class="no-bullets">
-                                        <h6>Gaming</h6>
-                                        <li>Consolas</li>
-                                        <li>Videojuegos</li>
-                                        <li>Accesorios de Juego</li>
-                                        <li>Sillas Gamer</li>
+                                        <h6 class="color-texto">Gaming</h6>
+                                        <li class="color-texto">Consolas</li>
+                                        <li class="color-texto">Videojuegos</li>
+                                        <li class="color-texto">Accesorios de Juego</li>
+                                        <li class="color-texto">Sillas Gamer</li>
                                     </ul>
+                                </div>
+                                <div class="category-box">
+                                    <div class="d-flex flex-row">
+                                        <div class="card d-flex flex-column p-2">
+                                            <h5 class="color-texto" style="text-align: center;">Producto destacado</h5>
+                                            <img src="https://www.gonzalezgimenez.com.py/storage/sku/ea-sport-consolas-de-juegos-juego-para-play-4-lego-marvel-collection-1-1-1671128026.gif" alt="">
+                                            <a href="#" class="boton-estilo centrado">Ir a comprar...</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </li>
                     <li>
                         <a href="#" class="hover-trigger" data-target="herramientas">
-                            <i class="fas fa-tools"></i>
-                            <span>Herramientas</span>
+                            <i class="fas fa-tools color-texto"></i>
+                            <span class="color-texto">Herramientas</span>
                         </a>
                         <div class="collapse-box" id="herramientas">
                             <div class="d-flex flex-row flex-wrap">
                                 <div class="category-box">
                                     <ul class="no-bullets">
-                                        <h6>Herramientas</h6>
-                                        <li>Herramientas Manuales</li>
-                                        <li>Herramientas Eléctricas</li>
-                                        <li>Equipos de Jardinería</li>
-                                        <li>Accesorios</li>
+                                        <h6 class="color-texto">Herramientas</h6>
+                                        <li class="color-texto">Herramientas Manuales</li>
+                                        <li class="color-texto">Herramientas Eléctricas</li>
+                                        <li class="color-texto">Equipos de Jardinería</li>
+                                        <li class="color-texto">Accesorios</li>
                                     </ul>
+                                </div>
+                                <div class="category-box">
+                                    <div class="d-flex flex-row">
+                                        <div class="card d-flex flex-column p-2">
+                                            <h5 class="color-texto" style="text-align: center;">Producto destacado</h5>
+                                            <img src="https://www.gonzalezgimenez.com.py/storage/sku/black-decker-herramientas-kit-blackdecker-go-pack-bdck502c1-b3-1-1-1620650962.jpg.webp" alt="">
+                                            <a href="#" class="boton-estilo centrado">Ir a comprar...</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </li>
                     <li>
                         <a href="#" class="hover-trigger" data-target="hogar">
-                            <i class="fas fa-home"></i>
-                            <span>Hogar y Cocina</span>
+                            <i class="fas fa-home color-texto"></i>
+                            <span class="color-texto">Hogar y Cocina</span>
                         </a>
                         <div class="collapse-box" id="hogar">
                             <div class="d-flex flex-row flex-wrap">
                                 <div class="category-box">
                                     <ul class="no-bullets">
-                                        <h6>Hogar y Cocina</h6>
-                                        <li>Utensilios de Cocina</li>
-                                        <li>Muebles</li>
-                                        <li>Decoración</li>
-                                        <li>Electrodomésticos</li>
+                                        <h6 class="color-texto">Hogar y Cocina</h6>
+                                        <li class="color-texto">Utensilios de Cocina</li>
+                                        <li class="color-texto">Muebles</li>
+                                        <li class="color-texto">Decoración</li>
+                                        <li class="color-texto">Electrodomésticos</li>
                                     </ul>
                                 </div>
                             </div>
@@ -312,18 +432,18 @@
                     </li>
                     <li>
                         <a href="#" class="hover-trigger" data-target="impresoras">
-                            <i class="fas fa-print"></i>
-                            <span>Impresoras</span>
+                            <i class="fas fa-print color-texto"></i>
+                            <span class="color-texto">Impresoras</span>
                         </a>
                         <div class="collapse-box" id="impresoras">
                             <div class="d-flex flex-row flex-wrap">
                                 <div class="category-box">
                                     <ul class="no-bullets">
-                                        <h6>Impresoras</h6>
-                                        <li>Impresoras Láser</li>
-                                        <li>Impresoras de Inyección de Tinta</li>
-                                        <li>Impresoras 3D</li>
-                                        <li>Accesorios de Impresión</li>
+                                        <h6 class="color-texto">Impresoras</h6>
+                                        <li class="color-texto">Impresoras Láser</li>
+                                        <li class="color-texto">Impresoras de Inyección de Tinta</li>
+                                        <li class="color-texto">Impresoras 3D</li>
+                                        <li class="color-texto">Accesorios de Impresión</li>
                                     </ul>
                                 </div>
                             </div>
@@ -331,18 +451,18 @@
                     </li>
                     <li>
                         <a href="#" class="hover-trigger" data-target="jardin">
-                            <i class="fas fa-seedling"></i>
-                            <span>Jardín</span>
+                            <i class="fas fa-seedling color-texto"></i>
+                            <span class="color-texto">Jardín</span>
                         </a>
                         <div class="collapse-box" id="jardin">
                             <div class="d-flex flex-row flex-wrap">
                                 <div class="category-box">
                                     <ul class="no-bullets">
-                                        <h6>Jardín</h6>
-                                        <li>Plantas</li>
-                                        <li>Muebles de Jardín</li>
-                                        <li>Herramientas de Jardinería</li>
-                                        <li>Decoración Exterior</li>
+                                        <h6 class="color-texto">Jardín</h6>
+                                        <li class="color-texto">Plantas</li>
+                                        <li class="color-texto">Muebles de Jardín</li>
+                                        <li class="color-texto">Herramientas de Jardinería</li>
+                                        <li class="color-texto">Decoración Exterior</li>
                                     </ul>
                                 </div>
                             </div>
@@ -350,18 +470,18 @@
                     </li>
                     <li>
                         <a href="#" class="hover-trigger" data-target="lecho">
-                            <i class="fas fa-bed"></i>
-                            <span>Lecho y Secado</span>
+                            <i class="fas fa-bed color-texto"></i>
+                            <span class="color-texto">Lecho y Secado</span>
                         </a>
                         <div class="collapse-box" id="lecho">
                             <div class="d-flex flex-row flex-wrap">
                                 <div class="category-box">
                                     <ul class="no-bullets">
-                                        <h6>Lecho y Secado</h6>
-                                        <li>Lavadoras</li>
-                                        <li>Secadoras</li>
-                                        <li>Combinaciones Lavadora-Secadora</li>
-                                        <li>Accesorios</li>
+                                        <h6 class="color-texto">Lecho y Secado</h6>
+                                        <li class="color-texto">Lavadoras</li>
+                                        <li class="color-texto">Secadoras</li>
+                                        <li class="color-texto">Combinaciones Lavadora-Secadora</li>
+                                        <li class="color-texto">Accesorios</li>
                                     </ul>
                                 </div>
                             </div>
@@ -369,18 +489,18 @@
                     </li>
                     <li>
                         <a href="#" class="hover-trigger" data-target="muebles">
-                            <i class="fas fa-couch"></i>
-                            <span>Muebles</span>
+                            <i class="fas fa-couch color-texto"></i>
+                            <span class="color-texto">Muebles</span>
                         </a>
                         <div class="collapse-box" id="muebles">
                             <div class="d-flex flex-row flex-wrap">
                                 <div class="category-box">
                                     <ul class="no-bullets">
-                                        <h6>Muebles</h6>
-                                        <li>Sofás</li>
-                                        <li>Mesas</li>
-                                        <li>Sillas</li>
-                                        <li>Armarios</li>
+                                        <h6 class="color-texto">Muebles</h6>
+                                        <li class="color-texto">Sofás</li>
+                                        <li class="color-texto">Mesas</li>
+                                        <li class="color-texto">Sillas</li>
+                                        <li class="color-texto">Armarios</li>
                                     </ul>
                                 </div>
                             </div>
@@ -388,18 +508,18 @@
                     </li>
                     <li>
                         <a href="#" class="hover-trigger" data-target="electrodomesticos">
-                            <i class="fas fa-plug"></i>
-                            <span>Pequeños Electrodomésticos</span>
+                            <i class="fas fa-plug color-texto"></i>
+                            <span class="color-texto">Pequeños Electrodomésticos</span>
                         </a>
                         <div class="collapse-box" id="electrodomesticos">
                             <div class="d-flex flex-row flex-wrap">
                                 <div class="category-box">
                                     <ul class="no-bullets">
-                                        <h6>Pequeños Electrodomésticos</h6>
-                                        <li>Batidoras</li>
-                                        <li>Cafeteras</li>
-                                        <li>Licuadoras</li>
-                                        <li>Tostadoras</li>
+                                        <h6 class="color-texto">Pequeños Electrodomésticos</h6>
+                                        <li class="color-texto">Batidoras</li>
+                                        <li class="color-texto">Cafeteras</li>
+                                        <li class="color-texto">Licuadoras</li>
+                                        <li class="color-texto">Tostadoras</li>
                                     </ul>
                                 </div>
                             </div>
@@ -407,18 +527,18 @@
                     </li>
                     <li>
                         <a href="#" class="hover-trigger" data-target="refrigeracion">
-                            <i class="fas fa-snowflake"></i>
-                            <span>Refrigeración</span>
+                            <i class="fas fa-snowflake color-texto"></i>
+                            <span class="color-texto">Refrigeración</span>
                         </a>
                         <div class="collapse-box" id="refrigeracion">
                             <div class="d-flex flex-row flex-wrap">
                                 <div class="category-box">
                                     <ul class="no-bullets">
-                                        <h6>Refrigeración</h6>
-                                        <li>Refrigeradores</li>
-                                        <li>Congeladores</li>
-                                        <li>Minibares</li>
-                                        <li>Accesorios</li>
+                                        <h6 class="color-texto">Refrigeración</h6>
+                                        <li class="color-texto">Refrigeradores</li>
+                                        <li class="color-texto">Congeladores</li>
+                                        <li class="color-texto">Minibares</li>
+                                        <li class="color-texto">Accesorios</li>
                                     </ul>
                                 </div>
                             </div>
@@ -426,18 +546,18 @@
                     </li>
                     <li>
                         <a href="#" class="hover-trigger" data-target="tv">
-                            <i class="fas fa-tv"></i>
-                            <span>TV</span>
+                            <i class="fas fa-tv color-texto"></i>
+                            <span class="color-texto">TV</span>
                         </a>
                         <div class="collapse-box" id="tv">
                             <div class="d-flex flex-row flex-wrap">
                                 <div class="category-box">
                                     <ul class="no-bullets">
-                                        <h6>TV</h6>
-                                        <li>Televisores LED</li>
-                                        <li>Smart TVs</li>
-                                        <li>Proyectores</li>
-                                        <li>Accesorios</li>
+                                        <h6 class="color-texto">TV</h6>
+                                        <li class="color-texto">Televisores LED</li>
+                                        <li class="color-texto">Smart TVs</li>
+                                        <li class="color-texto">Proyectores</li>
+                                        <li class="color-texto">Accesorios</li>
                                     </ul>
                                 </div>
                             </div>
@@ -445,18 +565,18 @@
                     </li>
                     <li>
                         <a href="#" class="hover-trigger" data-target="vehiculos">
-                            <i class="fas fa-car"></i>
-                            <span>Vehículos</span>
+                            <i class="fas fa-car color-texto"></i>
+                            <span class="color-texto">Vehículos</span>
                         </a>
                         <div class="collapse-box" id="vehiculos">
                             <div class="d-flex flex-row flex-wrap">
                                 <div class="category-box">
                                     <ul class="no-bullets">
-                                        <h6>Vehículos</h6>
-                                        <li>Autos</li>
-                                        <li>Motos</li>
-                                        <li>Bicicletas</li>
-                                        <li>Accesorios</li>
+                                        <h6 class="color-texto">Vehículos</h6>
+                                        <li class="color-texto">Autos</li>
+                                        <li class="color-texto">Motos</li>
+                                        <li class="color-texto">Bicicletas</li>
+                                        <li class="color-texto">Accesorios</li>
                                     </ul>
                                 </div>
                             </div>
