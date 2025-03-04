@@ -37,7 +37,7 @@
             display: flex;
             align-items: center;
             text-decoration: none;
-            color: #333;
+            /* color: #333; */
             padding: 8px 10px;
             border-radius: 4px;
             transition: background-color 0.3s;
@@ -65,8 +65,8 @@
             border: 1px solid #ccc;
             border-radius:3%;
             padding: 15px;
-            min-width: 350px;
-            max-width: 600px; /* Ajustable según necesidad */
+            min-width: 800px;
+            max-width: 800px; /* Ajustable según necesidad */
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             z-index: 1;
         }
@@ -141,6 +141,16 @@
 
         .centrado {
             text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            border: none !important;
+        }
+
+        .p-4 {
+            padding-left: 3.5rem !important;
         }
     </style>
 </head>
@@ -197,8 +207,8 @@
                             <span class="color-texto">Audio</span>
                         </a>
                         <div class="collapse-box" id="audio">
-                            <div class="d-flex flex-row flex-wrap">
-                                <div class="category-box row row-cols-2 p-4 gap-4">
+                            <div class="row">
+                                <div class=" col category-box row row-cols-2 p-4 gap-4">
                                     <ul class="no-bullets col">
                                         <h4 class="color-texto">Audio</h4>
                                         <li class="color-texto">Auriculares con cable</li>
@@ -221,11 +231,11 @@
                                         <li class="color-texto">Microfonos</li>
                                     </ul>
                                 </div>
-                                <div class="category-box">
+                                <div class="col category-box">
                                     <div class="d-flex flex-row">
-                                        <div class="card d-flex flex-column p-2 justify-content-center align-items-center">
+                                        <div class="card centrado d-flex flex-column p-2 justify-content-center align-items-center">
                                             <h5 class="color-texto" style="text-align: center;">Producto destacado</h5>
-                                            <img src="https://cartzilla-html.createx.studio/assets/img/shop/electronics/categories/07.png" alt="">
+                                            <img src="public/audio-removebg-preview.png" alt="">
                                             <a href="#" class="boton-estilo centrado d-flex">Ir a comprar...</a>
                                         </div>
                                     </div>
@@ -240,7 +250,7 @@
                             <span class="color-texto">Belleza y Cuidado Personal</span>
                         </a>
                         <div class="collapse-box" id="belleza">
-                            <div class="d-flex flex-row flex-wrap">
+                            <div class="d-flex justify-content-center">
                                 <div class="category-box row row-cols-2 p-4 gap-4">
                                     <ul class="no-bullets col">
                                         <h5 class="color-texto">Belleza y Cuidado Personal</h5>
@@ -264,11 +274,11 @@
                                         <li class="color-texto">Productos para el cabello</li>
                                     </ul>
                                 </div>
-                                <div class="category-box">
+                                <div class="d-flex">
                                     <div class="d-flex flex-row">
-                                        <div class="card d-flex flex-column p-2 justify-content-center align-items-center">
+                                        <div class="card centrado d-flex flex-column p-2 justify-content-center align-items-center">
                                             <h5 class="color-texto" style="text-align: center;">Producto destacado</h5>
-                                            <img src="https://www.gonzalezgimenez.com.py/storage/sku/bellissima-belleza-femenina-ondulador-bellissima-bhs3-2-1-1682717386.png.webp" alt="">
+                                            <img src="/public/bell.jpg" alt="">
                                             <a href="#" class="boton-estilo centrado">Ir a comprar...</a>
                                         </div>
                                     </div>
@@ -277,7 +287,7 @@
                         </div>
                         
                         <!-- <div class="collapse-box" id="belleza">
-                            <div class="d-flex flex-row flex-wrap">
+                            <div class="row">
                                 <div class="category-box">
                                     <ul class="no-bullets">
                                         <h6 class="color-texto">Belleza y Cuidado Personal</h6>
@@ -289,7 +299,7 @@
                                 </div>
                                 <div class="category-box">
                                     <div class="d-flex flex-row">
-                                        <div class="card d-flex flex-column p-2">
+                                        <div class="card centrado d-flex flex-column p-2">
                                             <h5 class="color-texto" style="text-align: center;">Producto destacado</h5>
                                             <img src="https://www.gonzalezgimenez.com.py/storage/sku/bellissima-belleza-femenina-ondulador-bellissima-bhs3-2-1-1682717386.png.webp" alt="">
                                             <ahref="#" class="boton-estilo centrado">Ir a comprar...</ahref=>
@@ -305,8 +315,8 @@
                             <span class="color-texto">Climatización</span>
                         </a>
                         <div class="collapse-box" id="climatizacion">
-                            <div class="d-flex flex-row flex-wrap">
-                                <div class="category-box">
+                            <div class="row">
+                                <div class="category-box row row-cols-2 p-4 gap-4">
                                     <ul class="no-bullets">
                                         <h6 class="color-texto">Climatización</h6>
                                         <li class="color-texto">Aire Acondicionado</li>
@@ -315,9 +325,9 @@
                                         <li class="color-texto">Humidificadores</li>
                                     </ul>
                                 </div>
-                                <div class="category-box">
+                                <div class="category-box row row-cols-2 p-4 gap-4">
                                     <div class="d-flex flex-row">
-                                        <div class="card d-flex flex-column p-2">
+                                        <div class="card centrado d-flex flex-column p-2">
                                             <h5 class="color-texto">Producto destacado</h5>
                                             <img src="https://www.gonzalezgimenez.com.py/storage/sku/goodweather-acondicionadores-de-aire-acondicionador-de-aire-goodweather-pisotecho-60000btu-2-1-1720618190.jpg.webp" alt="">
                                             <a href="#" class="boton-estilo centrado color-texto2">Ir a comprar...</a>
@@ -333,8 +343,8 @@
                             <span class="color-texto">Deportes y Fitness</span>
                         </a>
                         <div class="collapse-box" id="deportes">
-                            <div class="d-flex flex-row flex-wrap">
-                                <div class="category-box">
+                            <div class="row">
+                                <div class="category-box row row-cols-2 p-4 gap-4">
                                     <ul class="no-bullets">
                                         <h6 class="color-texto">Deportes y Fitness</h6>
                                         <li class="color-texto">Equipos de Gimnasio</li>
@@ -343,9 +353,9 @@
                                         <li class="color-texto">Bicicletas</li>
                                     </ul>
                                 </div>
-                                <div class="category-box">
+                                <div class="category-box row row-cols-2 p-4 gap-4">
                                     <div class="d-flex flex-row">
-                                        <div class="card d-flex flex-column p-2">
+                                        <div class="card centrado d-flex flex-column p-2">
                                             <h5 class="color-texto" style="text-align: center;">Producto destacado</h5>
                                             <img src="https://www.gonzalezgimenez.com.py/storage/sku/antur-bicicletas-bicicleta-giant-talon-2-aro-29-concret-1-1-1707419751.png.webp" alt="">
                                             <a href="#" class="boton-estilo centrado">Ir a comprar...</a>
@@ -361,8 +371,8 @@
                             <span class="color-texto">Gaming</span>
                         </a>
                         <div class="collapse-box" id="gaming">
-                            <div class="d-flex flex-row flex-wrap">
-                                <div class="category-box">
+                            <div class="row">
+                                <div class="category-box row row-cols-2 p-4 gap-4">
                                     <ul class="no-bullets">
                                         <h6 class="color-texto">Gaming</h6>
                                         <li class="color-texto">Consolas</li>
@@ -371,9 +381,9 @@
                                         <li class="color-texto">Sillas Gamer</li>
                                     </ul>
                                 </div>
-                                <div class="category-box">
+                                <div class="category-box row row-cols-2 p-4 gap-4">
                                     <div class="d-flex flex-row">
-                                        <div class="card d-flex flex-column p-2">
+                                        <div class="card centrado d-flex flex-column p-2">
                                             <h5 class="color-texto" style="text-align: center;">Producto destacado</h5>
                                             <img src="https://www.gonzalezgimenez.com.py/storage/sku/ea-sport-consolas-de-juegos-juego-para-play-4-lego-marvel-collection-1-1-1671128026.gif" alt="">
                                             <a href="#" class="boton-estilo centrado">Ir a comprar...</a>
@@ -389,8 +399,8 @@
                             <span class="color-texto">Herramientas</span>
                         </a>
                         <div class="collapse-box" id="herramientas">
-                            <div class="d-flex flex-row flex-wrap">
-                                <div class="category-box">
+                            <div class="row">
+                                <div class="category-box row row-cols-2 p-4 gap-4">
                                     <ul class="no-bullets">
                                         <h6 class="color-texto">Herramientas</h6>
                                         <li class="color-texto">Herramientas Manuales</li>
@@ -399,9 +409,9 @@
                                         <li class="color-texto">Accesorios</li>
                                     </ul>
                                 </div>
-                                <div class="category-box">
+                                <div class="category-box row row-cols-2 p-4 gap-4">
                                     <div class="d-flex flex-row">
-                                        <div class="card d-flex flex-column p-2">
+                                        <div class="card centrado d-flex flex-column p-2">
                                             <h5 class="color-texto" style="text-align: center;">Producto destacado</h5>
                                             <img src="https://www.gonzalezgimenez.com.py/storage/sku/black-decker-herramientas-kit-blackdecker-go-pack-bdck502c1-b3-1-1-1620650962.jpg.webp" alt="">
                                             <a href="#" class="boton-estilo centrado">Ir a comprar...</a>
@@ -417,8 +427,8 @@
                             <span class="color-texto">Hogar y Cocina</span>
                         </a>
                         <div class="collapse-box" id="hogar">
-                            <div class="d-flex flex-row flex-wrap">
-                                <div class="category-box">
+                            <div class="row">
+                                <div class="category-box row row-cols-2 p-4 gap-4">
                                     <ul class="no-bullets">
                                         <h6 class="color-texto">Hogar y Cocina</h6>
                                         <li class="color-texto">Utensilios de Cocina</li>
@@ -436,8 +446,8 @@
                             <span class="color-texto">Impresoras</span>
                         </a>
                         <div class="collapse-box" id="impresoras">
-                            <div class="d-flex flex-row flex-wrap">
-                                <div class="category-box">
+                            <div class="row">
+                                <div class="category-box row row-cols-2 p-4 gap-4">
                                     <ul class="no-bullets">
                                         <h6 class="color-texto">Impresoras</h6>
                                         <li class="color-texto">Impresoras Láser</li>
@@ -455,8 +465,8 @@
                             <span class="color-texto">Jardín</span>
                         </a>
                         <div class="collapse-box" id="jardin">
-                            <div class="d-flex flex-row flex-wrap">
-                                <div class="category-box">
+                            <div class="row">
+                                <div class="category-box row row-cols-2 p-4 gap-4">
                                     <ul class="no-bullets">
                                         <h6 class="color-texto">Jardín</h6>
                                         <li class="color-texto">Plantas</li>
@@ -474,8 +484,8 @@
                             <span class="color-texto">Lecho y Secado</span>
                         </a>
                         <div class="collapse-box" id="lecho">
-                            <div class="d-flex flex-row flex-wrap">
-                                <div class="category-box">
+                            <div class="row">
+                                <div class="category-box row row-cols-2 p-4 gap-4">
                                     <ul class="no-bullets">
                                         <h6 class="color-texto">Lecho y Secado</h6>
                                         <li class="color-texto">Lavadoras</li>
@@ -493,8 +503,8 @@
                             <span class="color-texto">Muebles</span>
                         </a>
                         <div class="collapse-box" id="muebles">
-                            <div class="d-flex flex-row flex-wrap">
-                                <div class="category-box">
+                            <div class="row">
+                                <div class="category-box row row-cols-2 p-4 gap-4">
                                     <ul class="no-bullets">
                                         <h6 class="color-texto">Muebles</h6>
                                         <li class="color-texto">Sofás</li>
@@ -512,8 +522,8 @@
                             <span class="color-texto">Pequeños Electrodomésticos</span>
                         </a>
                         <div class="collapse-box" id="electrodomesticos">
-                            <div class="d-flex flex-row flex-wrap">
-                                <div class="category-box">
+                            <div class="row">
+                                <div class="category-box row row-cols-2 p-4 gap-4">
                                     <ul class="no-bullets">
                                         <h6 class="color-texto">Pequeños Electrodomésticos</h6>
                                         <li class="color-texto">Batidoras</li>
@@ -531,8 +541,8 @@
                             <span class="color-texto">Refrigeración</span>
                         </a>
                         <div class="collapse-box" id="refrigeracion">
-                            <div class="d-flex flex-row flex-wrap">
-                                <div class="category-box">
+                            <div class="row">
+                                <div class="category-box row row-cols-2 p-4 gap-4">
                                     <ul class="no-bullets">
                                         <h6 class="color-texto">Refrigeración</h6>
                                         <li class="color-texto">Refrigeradores</li>
@@ -550,8 +560,8 @@
                             <span class="color-texto">TV</span>
                         </a>
                         <div class="collapse-box" id="tv">
-                            <div class="d-flex flex-row flex-wrap">
-                                <div class="category-box">
+                            <div class="row">
+                                <div class="category-box row row-cols-2 p-4 gap-4">
                                     <ul class="no-bullets">
                                         <h6 class="color-texto">TV</h6>
                                         <li class="color-texto">Televisores LED</li>
@@ -569,8 +579,8 @@
                             <span class="color-texto">Vehículos</span>
                         </a>
                         <div class="collapse-box" id="vehiculos">
-                            <div class="d-flex flex-row flex-wrap">
-                                <div class="category-box">
+                            <div class="row">
+                                <div class="category-box row row-cols-2 p-4 gap-4">
                                     <ul class="no-bullets">
                                         <h6 class="color-texto">Vehículos</h6>
                                         <li class="color-texto">Autos</li>
