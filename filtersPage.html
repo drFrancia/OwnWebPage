@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .block-filter {
+            margin-bottom: 30px;
+            background-color: #f5f5f5;
+            padding: 20px;
+            padding-left: 30px;
+        }
+
+        .block-tittle {
+            font-size: 1.0rem;
+            text-transform: uppercase;
+        }
+
+        .tittle {
+            font-size: 500px;
+        }
+    </style>
+</head>
+<body>
+    <!-- --------------------------------------------------------------         header       -------------------------------------------------------------- -->
+    <header class="header bg-white">
+        <div class="container-fluid d-flex flex-row">
+            <div class="header-left justify-content-center col-2" id="icono">
+                <a class="navbar-brand" href="#">
+                    <img src="https://www.gonzalezgimenez.com.py/assets_front/images/logo.svg" width="120" height="100" class="d-inline-block align-self-start bg-white" alt="Logo">
+                </a>
+            </div>
+            <form class="form-inline d-flex flex-row my-2 my-lg-0 col-5 header-center justify-content-end">
+                <input class="form-control mr-sm-2 col-10 rounded-pill" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0 rounded-circle" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <div class="widget-call col-2 d-flex align-items-center">
+                <i class="fa-sharp fa-solid fa-phone me-2" style="color: #33cc14; font-size: 1.5rem;"></i>
+                <div class="d-flex flex-column">
+                    <span>Contact Center</span>
+                    <a href="tel:(021) 413 0000" class="font-weight-bold ms-2">(021) 413 0000</a>
+                </div>
+            </div>
+            <div class="col-3 align-content-center" id="iconos">
+                <ul class="navbar-nav d-flex flex-row align-items-center justify-content-between">
+                    <li class="nav-item active">
+                        <a class="nav-link d-flex flex-column align-items-center text-center text-success" href="#">
+                            <i class="fa-solid fa-gift"></i> <h6>lista de bodas</h6> <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex flex-column align-items-center text-center text-success" href="#"><i class="fa-solid fa-user"></i>Cliente</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex flex-column align-items-center text-center text-success" href="#"><i class="fa-solid fa-cart-shopping"></i>Carrito</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- --------------------------------------------------------------     Breadcrumbs      -------------------------------------------------------------- -->
+    <section id="breadcrumbs">
+        <img src="public/breadcrumbsGG.png" alt="">
+    </section>
+    <!-- --------------------------------------------------------------    filtros/productos -------------------------------------------------------------- -->
+    <section id="container-fluid" class="">
+        <div class="row">
+            <div class="block-filter bg-info col-2">
+                <div class="block-tittle">
+                    <strong>Filtrar por:</strong>
+                </div>
+            </div>
+            <div class="contenido bg-light col">
+                <img src="public/productos.png" alt="" style="object-fit: cover; width: 100%;">
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html> 
