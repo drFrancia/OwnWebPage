@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Acondicionadores</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color: #0033a0;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .menu-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .products {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .product {
+            background: white;
+            padding: 15px;
+            width: 250px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .product img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .price-box {
+            margin-top: 10px;
+        }
+        .before {
+            text-decoration: line-through;
+            color: gray;
+        }
+        .offer {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <button class="menu-button">Todas las categorías ▼</button>
+            <span class="join">¡Unite al equipo!</span>
+        </nav>
+    </header>
+    <main>
+        <section class="products">
+            <article class="product">
+                <img src="imagen1.jpg" alt="Aire Goodweather 18000 BTU">
+                <h2>Acondicionador de Aire Goodweather 18000 BTU F/C Eco GW18 Inverter</h2>
+                <p>En chiqui cuotas de</p>
+                <span class="price">18 x Gs. 337.000</span>
+                <div class="price-box">
+                    <span class="before">Gs. 4.429.000</span>
+                    <span class="offer">Gs. 4.399.000</span>
+                </div>
+            </article>
+            <article class="product">
+                <img src="imagen2.jpg" alt="Aire Altech 12000 BTU">
+                <h2>Acondicionador de Aire Altech 12000 BTU F/C ECO ALT12H410 Split</h2>
+                <p>En chiqui cuotas de</p>
+                <span class="price">18 x Gs. 169.000</span>
+                <div class="price-box">
+                    <span class="before">Gs. 2.299.000</span>
+                    <span class="offer">Gs. 2.069.000</span>
+                </div>
+            </article>
+            <!-- Agregar más productos aquí -->
+        </section>
+    </main>
+</body>
+</html>

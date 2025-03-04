@@ -1,0 +1,47 @@
+.container {
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+}
+
+.parent {
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+
+}
+
+.item {
+    border: 2px black solid;
+    width: 100px;
+    height: 100px;
+    box-shadow: 12px 12px 28px 11px rgba(230,156,156,1);
+    -webkit-box-shadow: 12px 12px 28px 11px rgba(230,156,156,1);
+    -moz-box-shadow: 12px 12px 28px 11px rgba(230,156,156,1);
+}
+
+
+.parent :first-child{
+    background-color: blueviolet;
+}
+
+.parent :nth-child(2) {
+    background-color: aquamarine;
+}
+
+.parent :last-child { 
+    background-color: antiquewhite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
