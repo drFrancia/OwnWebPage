@@ -9,19 +9,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         .block-filter {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             background-color: #f5f5f5;
-            padding: 20px;
-            padding-left: 30px;
+            padding: 13px 13px 8px 24px;
         }
 
         .block-tittle {
-            font-size: 1.0rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
         }
 
-        .tittle {
-            font-size: 500px;
+        .filter-options-title {
+            font-size: 1rem;
+            margin: 5px 0;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .filter-list {
+            list-style-type: none;
+            padding: 0 10px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .filter-list.active {
+            max-height: 200px; /* Ajusta este valor según sea necesario */
+        }
+
+        .filter-item {
+            margin: 2px 0;
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -69,9 +88,38 @@
     <!-- --------------------------------------------------------------    filtros/productos -------------------------------------------------------------- -->
     <section id="container-fluid" class="">
         <div class="row">
-            <div class="block-filter bg-info col-2">
+            <div class="block-filter bg-light col-2">
                 <div class="block-tittle">
                     <strong>Filtrar por:</strong>
+                </div>
+                <div class="block-content">
+                    <div class="filter-options">
+                        <div class="filter-options-items">
+                            <div class="filter-options-title" onclick="toggleList(this)">
+                                Categoría <span class="collapse-icon">▼</span>
+                            </div>
+                            <ul class="filter-list" style="overflow-y: scroll;">
+                                <li class="filter-item">Notebooks (313)</li>
+                                <li class="filter-item">Desktops (30)</li>
+                                <li class="filter-item">Impresoras (138)</li>
+                                <li class="filter-item">Suplementos (298)</li>
+                                <li class="filter-item">Monitores (200)</li>
+                                <li class="filter-item">Almacenamiento (299)</li>
+                                <li class="filter-item">Redes (184)</li>
+                                <li class="filter-item">Componentes (1509)</li>
+                                <li class="filter-item">Accesorios (291)</li>
+                            </ul>
+                        </div>
+                        <div class="filter-options-items">
+                            <div class="filter-options-title" onclick="toggleList(this)">
+                                Precio <span class="collapse-icon">▼</span>
+                            </div>
+                            <ul class="filter-list">
+                                <!-- Agrega opciones para PRECIO aquí -->
+                            </ul>
+                        </div>
+                        <!-- Agrega más atributos según sea necesario -->
+                    </div>
                 </div>
             </div>
             <div class="contenido bg-light col">
@@ -80,11 +128,22 @@
         </div>
     </section>
 
-
-
     <!-- Bootstrap JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <script>
+        function toggleList(element) {
+            const list = element.nextElementSibling;
+            const icon = element.querySelector('.collapse-icon');
+            if (list.classList.contains('active')) {
+                list.classList.remove('active');
+                icon.textContent = '▼';
+            } else {
+                list.classList.add('active');
+                icon.textContent = '▲';
+            }
+        }
+    </script>
 </body>
-</html> 
+</html>
