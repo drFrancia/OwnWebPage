@@ -1,0 +1,120 @@
+<style>
+    #new-cat-destacadas .title-cat{
+      text-align: center;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+    #new-cat-destacadas .img-mini{
+      background-color: #f2f2f2;
+      padding: 10px;
+      border-radius: 0.5rem;
+    }
+
+    #new-cat-destacadas .img-mini img{
+      transition: transform 0.3s ease;
+    }
+
+    #new-cat-destacadas .img-mini img:hover{
+      transform: scale(1.1); 
+    }
+
+    #new-cat-destacadas .catego-dest{
+      box-shadow: 0 0 12px rgba(0, 0, 0, .05), 
+      0 5px 8px 0 rgba(0, 0, 0, .05), 
+      0 2px 4px 0 rgba(0, 0, 0, .05);
+      border-radius: 0.5rem;
+    }
+  </style>
+
+<div class="container sticky-sm-top d-none" id="cat-destacadas">
+  <div class="owl-carousel w-100">
+    <a class="text-decoration-none" href="https://www.gonzalezgimenez.com.py/categoria/127/acondicionadores-de-aire?utm_source=web&utm_medium=categoria&utm_campaign=CTA-Carrousel-aire&utm_id=CTA-Carrousel-aire">
+      <div class="catego-dest">
+        <div class="img-mini">
+          <img src="https://www.gonzalezgimenez.com.py/storage/categorias/imagen-mega-menu4-1-1721685650.png" alt="aires">
+        </div>
+        <div class="title-cat"><span>Aires</span></div>        
+      </div>
+    </a>
+    <a class="text-decoration-none" href="    <a class="text-decoration-none" href="https://www.gonzalezgimenez.com.py/categoria/487/celulares">
+      <div class="catego-dest">
+        <div class="img-mini">
+          <img src="https://www.gonzalezgimenez.com.py/storage/sku/xiaomi-celulares-celular-xiaomi-12-pro-dual-256-gb-12-gb-5g-purple-1-1-1715432369.jpg.webp" alt="celulares">
+        </div>
+        <div class="title-cat"><span>Celulares</span></div>        
+      </div>
+    </a>
+    <!-- <a class="text-decoration-none" href="https://www.gonzalezgimenez.com.py/buscador?q=aire+goodweather&buscar=">
+      <div class="catego-dest">
+        <div class="img-mini">
+          <img src="https://www.gonzalezgimenez.com.py/storage/marcas/marca-logo269-1-1736864632.jpg.webp" alt="aire goodweather">
+        </div>
+        <div class="title-cat"><span>Goodweather</span></div>        
+      </div>
+    </a> -->
+    <a class="text-decoration-none" href="https://www.gonzalezgimenez.com.py/categoria/179/refrigeracion?utm_source=web&utm_medium=categoria&utm_campaign=CTA-Carrousel-heladeras&utm_id=CTA-Carrousel-heladeras">
+      <div class="catego-dest">
+        <div class="img-mini">
+          <img src="https://www.gonzalezgimenez.com.py/storage/categorias/imagen-mega-menu44-1-1721685677.png" alt="heladeras">
+        </div>
+        <div class="title-cat"><span>Refrigeración</span></div>        
+      </div>
+    </a>
+    <a class="text-decoration-none" href="https://www.gonzalezgimenez.com.py/categoria/109/lavado-y-secado?utm_source=web&utm_medium=categoria&utm_campaign=CTA-Carrousel-lavado&utm_id=CTA-Carrousel-lavado">
+      <div class="catego-dest">
+        <div class="img-mini">
+          <img src="https://www.gonzalezgimenez.com.py/storage/categorias/imagen-mega-menu29-1-1721685559.png" alt="lavado">
+        </div>
+        <div class="title-cat"><span>Lavado</span></div>        
+      </div>
+    </a>
+    <a class="text-decoration-none" href="https://www.gonzalezgimenez.com.py/categoria/115/tv?utm_source=web&utm_medium=categoria&utm_campaign=CTA-Carrousel-televisores&utm_id=CTA-Carrousel-televisores">
+      <div class="catego-dest">
+        <div class="img-mini">
+          <img src="https://www.gonzalezgimenez.com.py/storage/categorias/imagen-mega-menu62-1-1721685533.png" alt="televisores">
+        </div>
+        <div class="title-cat"><span>Televisores</span></div>        
+      </div>
+    </a>
+    <a class="text-decoration-none" href="https://www.gonzalezgimenez.com.py/promocion/886/web-only">
+      <div class="catego-dest">
+        <div class="img-mini">
+          <img src="https://www.gonzalezgimenez.com.py/storage/promociones/promocion-mobile886-1-1732022079.jpg" alt="Web Only">
+        </div>
+        <div class="title-cat"><span>Web Only</span></div>        
+      </div>
+    </a>
+    <a class="text-decoration-none" href="https://www.gonzalezgimenez.com.py/promocion/1171/disfruta-al-aire-libre-con-estos-productos">
+      <div class="catego-dest">
+        <div class="img-mini">
+          <img src="https://www.gonzalezgimenez.com.py/storage/categorias/imagen-mega-menu86-1-1721685748.png" alt="perfumes">
+        </div>
+        <div class="title-cat"><span>Al aire Libre</span></div>        
+      </div>
+    </a>
+  </div>
+
+<!-- <div class="container mt-1" id="gifconge">
+  <a href="https://www.gonzalezgimenez.com.py/promocion/1138/precios-congelados">
+    <img class="img-fluid" alt="gif calor" src="https://www.gonzalezgimenez.com.py/storage/marcas/marca-logo269-1-1737031180.gif">
+  </a>
+</div> -->
+
+</div>
+<script>
+$(document).ready(function() {
+  function insertElement() {
+    var header = document.querySelector('.header-intro-clearance');
+    var banner = document.querySelector('#cat-destacadas');
+    if (header && banner) {
+      var newDiv = banner.cloneNode(true);
+      newDiv.id = 'new-cat-destacadas';
+      header.parentNode.insertBefore(newDiv, header.nextSibling);
+      newDiv.classList.remove('d-none');
+    }
+
+  }
+  insertElement();
+});
+</script>
+
