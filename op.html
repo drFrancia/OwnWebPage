@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dual Range Slider con Fondo Gris</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        .range-slider {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Fondo gris para el slider */
+        .slider-background {
+            position: absolute;
+            height: 6px;
+            background: #ccc; /* Gris */
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 3px;
+            z-index: 0;
+        }
+
+        /* La parte azul seleccionada */
+        .slider-track {
+            position: absolute;
+            height: 6px;
+            background: #007bff; /* Azul */
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 3px;
+            z-index: 1;
+        }
+
+        /* Personalización de los sliders */
+        .range-slider input[type="range"] {
+            position: absolute;
+            width: 100%;
+            -webkit-appearance: none;
+            appearance: none;
+            background: none;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .range-slider input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            background: #007bff;
+            border-radius: 50%;
+            cursor: pointer;
+            pointer-events: auto;
+            position: relative;
+            z-index: 3;
+        }
+
+        .range-values {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            gap: 10px;
+        }
+
+        .range-values input {
+            width: 100px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body class="container mt-5">
+
+    <h4 class="mb-4">Dual Range Slider con Fondo Gris</h4>
+
+    <div class="range-slider">
+        <!-- Fondo gris general del slider -->
+        <div class="slider-background"></div>
+        <!-- Rango azul seleccionado -->
+        <div class="slider-track"></div>
+        <input type="range" id="minRange" min="0" max="150000" value="20">
+        <input type="range" id="maxRange" min="0" max="150000" value="150000">
+    </div>
+    
+    <div class="range-values">
+        <label for="minValue">Mínimo:</label>
+        <input type="number" id="minValue" min="0" max="150000" value="20">
+        
+        <label for="maxValue">Máximo:</label>
+        <input type="number" id="maxValue" min="0" max="150000" value="150000">
+    </div>
+
+    <script>
+        const minRange = document.getElementById('minRange');
+        const maxRange = document.getElementById('maxRange');
+        const minValue = document.getElementById('minValue');
+        const maxValue = document.getElementById('maxValue');
+        const sliderTrack = document.querySelector('.slider-track');
+
+        const updateSlider = () => {
+            let min = parseInt(minRange.value);
+            let max = parseInt(maxRange.value);
+
+            if (max - min < 10) {
+                if (event.target === minRange || event.target === minValue) {
+                    minRange.value = max - 10;
+                    minValue.value = max - 10;
+                } else {
+                    maxRange.value = min + 10;
+                    maxValue.value = min + 10;
+                }
+                min = parseInt(minRange.value);
+                max = parseInt(maxRange.value);
+            }
+
+            minValue.value = min;
+            maxValue.value = max;
+
+            let minPercent = (min / minRange.max) * 100;
+            let maxPercent = (max / maxRange.max) * 100;
+
+            sliderTrack.style.left = minPercent + "%";
+            sliderTrack.style.width = (maxPercent - minPercent) + "%";
+        };
+
+        const updateInput = () => {
+            minRange.value = minValue.value;
+            maxRange.value = maxValue.value;
+            updateSlider();
+        };
+
+        minRange.addEventListener('input', updateSlider);
+        maxRange.addEventListener('input', updateSlider);
+        minValue.addEventListener('input', updateInput);
+        maxValue.addEventListener('input', updateInput);
+
+        updateSlider();
+    </script>
+
+</body>
+</html>

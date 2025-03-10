@@ -3,92 +3,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Acondicionadores</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Catálogo de Productos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
+        .filter-list { display: none; padding-left: 15px; overflow-y: scroll; }
+        .filter-list.active { display: block; max-height: 200px; }
+        .collapse-icon { cursor: pointer; }
+        .price-display { font-weight: bold; }
+        .filter-item { margin: 14px 0; font-size: 0.9rem; }
+        .filter-list.price-filter { overflow: visible; max-height: none;}
+        
+        .range-container { display: flex; flex-direction: column; align-items: center; }
+        .range-inputs { display: flex; justify-content: space-between; width: 100%; }
+        .range-slider { width: 100%; position: relative; }
+        .range-slider input { position: absolute; width: 100%; }
+        .range-slider {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-items: center;
         }
-        header {
-            background-color: #0033a0;
-            color: white;
-            padding: 15px;
+
+        .range-slider input[type="range"] {
+            position: absolute;
+            width: 100%;
+            -webkit-appearance: none;
+            appearance: none;
+            background: none;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .range-slider input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            background: #082e85;
+            border-radius: 50%;
+            cursor: pointer;
+            pointer-events: auto;
+            position: relative;
+            z-index: 3;
+        }
+
+        .slider-track {
+            position: absolute;
+            height: 6px;
+            background: #082e85;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            border-radius: 3px;
+        }
+
+        .slider-background {
+            position: absolute;
+            height: 6px;
+            background: #ccc; /* Gris */
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 3px;
+            z-index: 0;
+        }
+
+        .range-values {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 10px;
         }
-        .menu-button {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .products {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-        }
-        .product {
-            background: white;
-            padding: 15px;
-            width: 250px;
+
+        .range-values input {
+            width: 100px;
             text-align: center;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .product img {
-            max-width: 100%;
+            border: 1px solid #ccc;
             border-radius: 5px;
+            padding: 5px;
         }
-        .price-box {
-            margin-top: 10px;
-        }
-        .before {
-            text-decoration: line-through;
-            color: gray;
-        }
-        .offer {
-            color: red;
-            font-weight: bold;
+
+        .btn-primary { background-color: #082e85 !important;}
+
+        .img-fluid {
+            max-width: 108% !important;
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <button class="menu-button">Todas las categorías ▼</button>
-            <span class="join">¡Unite al equipo!</span>
-        </nav>
+    <header class="header bg-white">
+        <div class="container-fluid d-flex flex-row">
+            <div class="header-left justify-content-center col-2" id="icono">
+                <a class="navbar-brand" href="#">
+                    <img src="https://www.gonzalezgimenez.com.py/assets_front/images/logo.svg" width="120" height="100" class="d-inline-block align-self-start bg-white" alt="Logo">
+                </a>
+            </div>
+            <form class="form-inline d-flex flex-row my-2 my-lg-0 col-5 header-center justify-content-end">
+                <input class="form-control mr-sm-2 col-10 rounded-pill" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0 rounded-circle" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <div class="widget-call col-2 d-flex align-items-center">
+                <i class="fa-sharp fa-solid fa-phone me-2" style="color: #33cc14; font-size: 1.5rem;"></i>
+                <div class="d-flex flex-column">
+                    <span>Contact Center</span>
+                    <a href="tel:(021) 413 0000" class="font-weight-bold ms-2">(021) 413 0000</a>
+                </div>
+            </div>
+            <div class="col-3 align-content-center" id="iconos">
+                <ul class="navbar-nav d-flex flex-row align-items-center justify-content-between">
+                    <li class="nav-item active">
+                        <a class="nav-link d-flex flex-column align-items-center text-center text-success" href="#">
+                            <i class="fa-solid fa-gift"></i> <h6>lista de bodas</h6> <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex flex-column align-items-center text-center text-success" href="#"><i class="fa-solid fa-user"></i>Cliente</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex flex-column align-items-center text-center text-success" href="#"><i class="fa-solid fa-cart-shopping"></i>Carrito</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </header>
-    <main>
-        <section class="products">
-            <article class="product">
-                <img src="imagen1.jpg" alt="Aire Goodweather 18000 BTU">
-                <h2>Acondicionador de Aire Goodweather 18000 BTU F/C Eco GW18 Inverter</h2>
-                <p>En chiqui cuotas de</p>
-                <span class="price">18 x Gs. 337.000</span>
-                <div class="price-box">
-                    <span class="before">Gs. 4.429.000</span>
-                    <span class="offer">Gs. 4.399.000</span>
+
+    <section id="breadcrumbs" class="container-fluid mt-3">
+        <img src="public/breadcrumbsGG.png" alt="Navegación" class="img-fluid">
+    </section>
+
+    <section class="container-fluid mt-4 d-flex">
+        <!-- Sidebar de Filtros -->
+        <aside class=" col-2 pe-3" style="overflow-y: scroll;">
+            <h4 class="mb-3">Filtros</h4>
+            <!-- ------------------------------------------------------------------------------ Categorias ------------------------------------------------------------------------------ -->
+            <div class="mb-3">
+                <h5 class="d-flex justify-content-between align-items-center" onclick="toggleList(this)">
+                    Categorías <i class="fa fa-chevron-down collapse-icon"></i>
+                </h5>                
+                <ul class="list-unstyled filter-list">
+                    <li class="filter-item"><i class="fa fa-chevron-down collapse-icon"></i> Auriculares con Cable</li>
+                    <li class="filter-item"><i class="fa fa-chevron-down collapse-icon"></i> Gamer Over Ear</li>
+                    <li class="filter-item"><i class="fa fa-chevron-down collapse-icon"></i> Accesorios de Audio</li>
+                    <li class="filter-item"><i class="fa fa-chevron-down collapse-icon"></i> Barras de Sonido</li>
+                    <li class="filter-item"><i class="fa fa-chevron-down collapse-icon"></i> Microfonos Gamer</li>
+                    <li class="filter-item"><i class="fa fa-chevron-down collapse-icon"></i> Audio</li>
+                    <li class="filter-item"><i class="fa fa-chevron-down collapse-icon"></i> Auriculares Inalambricos</li>
+                    <li class="filter-item"><i class="fa fa-chevron-down collapse-icon"></i> Parlantes Bluetooth</li>
+                    <li class="filter-item"><i class="fa fa-chevron-down collapse-icon"></i> In Ear Inalambricos</li>
+                </ul>
+            </div>
+            <!-- ------------------------------------------------------------------------------ Precio ------------------------------------------------------------------------------ -->
+
+            <div class="mb-3">
+                <h5 class="d-flex justify-content-between align-items-center" onclick="toggleList(this)">
+                    Precios <i class="fa fa-chevron-down collapse-icon"></i>
+                </h5>                
+                <div class="filter-list price-filter ms-3 me-2" >
+                    <div class="range-slider">
+                        <input type="range" id="minRange" min="0" max="150000" value="0">
+                        <input type="range" id="maxRange" min="0" max="150000" value="49900000">
+                        <div class="slider-track"></div>
+                        <div class="slider-background"></div>
+                    </div>
+                    <div class="range-values my-3">
+                        <input type="number" id="minValue" min="0" max="150000" value="20">
+                        <div class="delimitador">-</div>
+                        <input type="number" id="maxValue" min="0" max="150000" value="150000">
+                    </div>
+                    <button class="btn btn-primary w-100" onclick="applyPriceFilter()">Aplicar</button>
                 </div>
-            </article>
-            <article class="product">
-                <img src="imagen2.jpg" alt="Aire Altech 12000 BTU">
-                <h2>Acondicionador de Aire Altech 12000 BTU F/C ECO ALT12H410 Split</h2>
-                <p>En chiqui cuotas de</p>
-                <span class="price">18 x Gs. 169.000</span>
-                <div class="price-box">
-                    <span class="before">Gs. 2.299.000</span>
-                    <span class="offer">Gs. 2.069.000</span>
+            </div>
+            <!-- ------------------------------------------------------------------------------ Marca ------------------------------------------------------------------------------ -->
+            <div class="mb-3">
+                <h5 class="d-flex justify-content-between align-items-center" onclick="toggleList(this)">
+                    Marca <i class="fa fa-chevron-down collapse-icon"></i>
+                </h5>                
+                <div class="filter-list ms-3 me-2">
+                    <input type="text" class="form-control mb-2" id="searchBrand" placeholder="Buscar marca..." onkeyup="filterBrands()">
+                    <ul class="list-unstyled" id="brandList">
+                        <li><input type="checkbox" value="Sony"> Sony</li>
+                        <li><input type="checkbox" value="Samsung"> Samsung</li>
+                        <li><input type="checkbox" value="Apple"> Apple</li>
+                        <li><input type="checkbox" value="LG"> LG</li>
+                        <li><input type="checkbox" value="Bose"> Bose</li>
+                        <li><input type="checkbox" value="JBL"> JBL</li>
+                        <li><input type="checkbox" value="Beats"> Beats</li>
+                    </ul>
                 </div>
-            </article>
-            <!-- Agregar más productos aquí -->
-        </section>
-    </main>
+            </div>
+            
+
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="col-md-9">
+            <img src="public/productos.png" alt="Productos" class="img-fluid">
+        </main>
+    </section>
+
+    <script>
+        function toggleList(element) {
+            const content = element.nextElementSibling;
+            const icon = element.querySelector('.collapse-icon');
+            content.classList.toggle('active');
+            icon.classList.toggle('fa-chevron-down');
+            icon.classList.toggle('fa-chevron-up');
+        }
+
+
+        // document.getElementById('price-range').addEventListener('input', function() {
+        //     document.getElementById('min-price').textContent = `Gs. ${parseInt(this.value).toLocaleString()}`;
+        // });
+
+        function updatePriceInputs(value) {
+            document.getElementById('min-price').value = value;
+        }
+
+        function syncRange() {
+            let minPrice = parseInt(document.getElementById('min-price').value) || 10000;
+            let maxPrice = parseInt(document.getElementById('max-price').value) || 1000000;
+
+            if (minPrice > maxPrice) {
+                document.getElementById('min-price').value = maxPrice;
+            }
+            document.getElementById('price-range').value = minPrice;
+        }
+
+        function applyPriceFilter() {
+            const minPrice = document.getElementById('min-price').value;
+            const maxPrice = document.getElementById('max-price').value;
+            console.log(`Filtrando productos con precios entre Gs. ${minPrice} y Gs. ${maxPrice}`);
+            // Aquí puedes agregar la lógica para filtrar los productos según el rango de precios
+        }
+
+        const minRange = document.getElementById('minRange');
+        const maxRange = document.getElementById('maxRange');
+        const minValue = document.getElementById('minValue');
+        const maxValue = document.getElementById('maxValue');
+        const sliderTrack = document.querySelector('.slider-track');
+
+        const updateSlider = () => {
+            let min = parseInt(minRange.value);
+            let max = parseInt(maxRange.value);
+
+            if (max - min < 500) {
+                if (event.target === minRange || event.target === minValue) {
+                    minRange.value = max - 500;
+                    minValue.value = max - 500;
+                } else {
+                    maxRange.value = min + 500;
+                    maxValue.value = min + 500;
+                }
+                min = parseInt(minRange.value);
+                max = parseInt(maxRange.value);
+            }
+
+            minValue.value = min;
+            maxValue.value = max;
+
+            let minPercent = (min / minRange.max) * 100;
+            let maxPercent = (max / maxRange.max) * 100;
+
+            sliderTrack.style.left = minPercent + "%";
+            sliderTrack.style.width = (maxPercent - minPercent) + "%";
+        };
+
+        const updateInput = () => {
+            minRange.value = minValue.value;
+            maxRange.value = maxValue.value;
+            updateSlider();
+        };
+
+        minRange.addEventListener('input', updateSlider);
+        maxRange.addEventListener('input', updateSlider);
+        minValue.addEventListener('input', updateInput);
+        maxValue.addEventListener('input', updateInput);
+
+        updateSlider();
+    </script>
+    <script>
+        function filterBrands() {
+            let input = document.getElementById("searchBrand").value.toLowerCase();
+            let brands = document.querySelectorAll("#brandList li");
+            
+            brands.forEach(brand => {
+                let text = brand.textContent.toLowerCase();
+                brand.style.display = text.includes(input) ? "" : "none";
+            });
+        }
+    </script>
+    
 </body>
 </html>
